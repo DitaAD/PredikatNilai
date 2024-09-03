@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--Pemrograman Web | Tugas | Tugas 1 | 2210511169 | Dita Annisa Diningtyas-->
+<html>
+<head>
+    <title>Perhitungan Nilai dengan Javascript</title>
+    <style type="text/css">
+        body {
+            background-color: lightblue;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            margin: 0;
+            flex-direction: column;
+        }
+
+         table {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+        }
+
+        td {
+            border: none;
+        }
+
+        td .nilaiOutput {
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+    
+        #hasil {
+          margin-bottom: 10px;
+        }
+
+        .hasilBox {
+            border: 1px solid black;
+            margin-top: 9px;
+            margin-bottom: 9px;
+            background-color: white;
+            text-align: left;
+        }
+
+        .buttonHasil button{
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          display: block;
+          margin: 0 auto;
+        }
+      </style>
+
+    </style>
+</head>
+
+<body>
+    <table border="1">
+      <tr>
+        <td><p>Nilai Anda</p></td>
+        <td>:</td>
+        <td><input id="nilaiInput"></input></td>
+      </tr>
+      <tr>
+        <td class="nilaiOutput">Anda Mendapatkan Predikat</td>
+        <td>:</td>
+        <td>
+            <div class="hasilBox"></div>
+        </td>
+      </tr>
+    </table>
+
+    <a class="buttonHasil"><button onclick="hitungNilai()">Hasilnya</button></a>
+  
+    <script language="javascript">
+      function hitungNilai() {
+        var nilaiInput = document.getElementById("nilaiInput").value;
+        var hasil;
+  
+        if (nilaiInput >= 80 && nilaiInput <= 100) {
+          hasil = 'A';
+        } else if (nilaiInput >= 60 && nilaiInput < 80) {
+          hasil = 'B';
+        } else if (nilaiInput >= 40 && nilaiInput < 60) {
+          hasil = 'C';
+        } else if (nilaiInput >= 20 && nilaiInput < 40) {
+          hasil = 'D';
+        } else {
+          hasil = 'E';
+        }
+  
+        var hasilBox = document.querySelector(".hasilBox");
+        hasilBox.innerHTML = hasil;
+
+      }
+    </script>
+  </body>
+  </html>
